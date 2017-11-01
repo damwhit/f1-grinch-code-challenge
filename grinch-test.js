@@ -1,14 +1,20 @@
 var assert = require('chai').assert;
 var Grinch = require('./grinch');
 
-describe('Grinch', function () {
-  it('should have a mood', function () {
+describe('Grinch', function() {
+
+  it('should have a mood', function() {
     var grinch = new Grinch({mood: 'grumpy'});
     assert.equal(grinch.mood, 'grumpy');
   });
 
+  it('should have a grumpy mood by default', function() {
+    var grinch = new Grinch();
+    assert.equal(grinch.mood, 'grumpy');
+  });
+
   it('should have a heart two sizes too small', function() {
-    var grinch = new Grinch({mood: 'grumpy'});
+    var grinch = new Grinch({mood: 'maniacal'});
     assert.equal(grinch.heart, 'two sizes too small');
   });
 
@@ -34,4 +40,5 @@ describe('Grinch', function () {
     assert.equal(grinch.mood, 'jolly');
     assert.equal(grinch.heart, 'three times two sizes too small');
   });
+
 });
