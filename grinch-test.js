@@ -9,7 +9,7 @@ describe('Grinch', function() {
   });
 
   it.skip('should have a grumpy mood by default', function() {
-    var grinch = new Grinch();
+    var grinch = new Grinch({});
     assert.equal(grinch.mood, 'grumpy');
   });
 
@@ -21,12 +21,6 @@ describe('Grinch', function() {
   it.skip('should possess no presents by default', function()  {
     var grinch = new Grinch({mood: 'grumpy'});
     assert.deepEqual(grinch.presents, []);
-  });
-
-  it.skip('should steal be able to steal presents', function() {
-    var grinch = new Grinch({mood: 'grumpy', presents: ['drums']});
-    grinch.stealPresents(['bicycles', 'plums', 'tricycles']);
-    assert.deepEqual(grinch.presents, ['drums', 'bicycles', 'plums', 'tricycles']);
   });
 
   it.skip('should be able to alphabetize presents', function() {
@@ -49,6 +43,12 @@ describe('Grinch', function() {
     grinch.realizeTrueMeaningOfHolidays();
     assert.equal(grinch.mood, 'jolly');
     assert.equal(grinch.heart, 'three times two sizes too small');
+  });
+
+  it.skip('should steal be able to steal presents', function() {
+    var grinch = new Grinch({mood: 'grumpy', presents: ['drums']});
+    grinch.stealPresents(['bicycles', 'plums', 'tricycles']);
+    assert.deepEqual(grinch.presents, ['drums', 'bicycles', 'plums', 'tricycles']);
   });
 
 });
