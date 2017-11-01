@@ -4,17 +4,17 @@ var Grinch = require('./grinch');
 
 describe('Who', function() {
 
-  it.skip('should have a name', function() {
+  it('should have a name', function() {
     var who = new Who('Cindy-Lou');
     assert.equal(who.name, 'Cindy-Lou');
   });
 
-  it.skip('should have no presents by default', function()  {
+  it('should have no presents by default', function()  {
     var who = new Who('Cindy-Lou');
     assert.deepEqual(who.presents, []);
   });
 
-  it.skip('should earn the first of the grinch\'s presents when it sings to him', function() {
+  it('should earn the first of the grinch\'s presents when it sings to him', function() {
     var who = new Who('Cindy-Lou');
     var grinch = new Grinch({presents: ['bicycles', 'plums', 'tricycles']})
     who.sing(grinch);
@@ -23,7 +23,7 @@ describe('Who', function() {
     assert.equal(grinch.presents[0], 'plums');
   });
 
-  it.skip('should only have room for three presents', function() {
+  it('should only have room for three presents', function() {
     var who = new Who('Cindy-Lou');
     var grinch = new Grinch({mood: 'maniacal', trinkets: ['drums', 'bicycles', 'plums', 'tricycles']});
     who.sing(grinch);
